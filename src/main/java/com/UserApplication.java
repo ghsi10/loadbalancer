@@ -26,8 +26,7 @@ public class UserApplication {
 
     @RequestMapping("/hi")
     public String hi() {
-        String greeting = webClientBuilder.build().get().uri("http://hello").retrieve().bodyToMono(String.class).block();
-        return String.format("%s!", greeting);
+        return webClientBuilder.build().get().uri("http://hello").retrieve().bodyToMono(String.class).block();
     }
 
     public static void main(String[] args) {
